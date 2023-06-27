@@ -1,0 +1,84 @@
+<%layout("./layouts/boilerplate")%>
+<h1>SRINIVASA METEREAILS</h1>
+<h2>JAGGAYYAPETA</h2>
+<h2>521175</h2>
+<br><br>
+
+
+<a href="/workers/add">add</a>
+
+  <style>
+    body {
+  background-image: url("https://media.idownloadblog.com/wp-content/uploads/2020/06/macOS-Big-Sur-Vector-Wave-Wallpaper-iDownloadBlog.jpg");
+  background-position: center;
+  background-size: cover;
+  /* width: 980px; */
+  /* height: 500px; */
+  /* border-radius: 8px; */
+  position: relative;
+  z-index: 2; 
+  /* font-family: 9px "Poppins", sans-serif; */
+}
+    .card{
+      background-image: url("https://media.idownloadblog.com/wp-content/uploads/2020/06/macOS-Big-Sur-Vector-Wave-Wallpaper-iDownloadBlog.jpg");
+  background-position: center;
+  background-size: cover;
+  /* width: 980px; */
+  /* height: 500px; */
+  /* border-radius: 8px; */
+  position: relative;
+  z-index: 2; 
+        margin: 1rem;
+        background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+    }
+    .butto{
+        display: flex;
+  justify-content: space-between;
+    }
+
+    .row{
+      padding-left: 150px;
+    }
+    .newNotes{
+      text-align: center;
+    }
+  </style>
+
+  <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
+  <!-- <link rel="stylesheet" href="/stylesheets/index.css" /> -->
+   
+
+
+    
+    <a href="/logout">LOGOUT</a>
+    
+    
+    
+    <div class="row">
+        
+        <% for(let worker of workers) { %>
+
+          <div class="card col-lg-3 col-md-4 col-sm-6 " >
+            
+            <div class="card-body overflow-hidden" style="height: 200px;" onclick="window.location.href = '/workers/<%=worker._id%>';">
+              <!-- <div class="card-body" style="height: 150px; overflow-y: auto;"> -->
+                <h5 class="card-title" style="z-index: 1;
+                color: white;
+                font-size: 40px;
+                font-family: 'Raleway', sans-serif;"><%= worker.name%></h5>
+                <p class="card-text" style="color: #fff;
+                text-align: justify;
+                font-size: 20px;">
+                    <%= worker.balance %>
+                </p>
+            </div>
+        
+        
+        
+          </div>
+        <% } %>
+      </div>
+
+    
+

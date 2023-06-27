@@ -1,0 +1,48 @@
+<%layout("./layouts/boilerplate")%>
+
+
+<h1>edit trip</h1>
+<form action="/workers/<%=worker._id%>/<%=trip._id%>?_method=PUT" method="POST" novalidate class="validated-form" >
+ <div>
+     <div>
+        <label for="date"class="form-label">date:</label>
+        <input type="text"class="form-control" name="trip[date]"placeholder="date"id="date" value="<%=trip.date%>">
+     </div>
+     <div>
+        <label for="vehicle"class="form-label">vehicle no:</label>
+        <input type="text"class="form-control" name="trip[vehicle]"placeholder="vehicleno"id="vehicle" value="<%=trip.vehicle%>" >
+     </div>
+     <div>
+        <label for="paymenttype"class="form-label">paymenttype:</label>
+        <input type="text"class="form-control" name="trip[paymenttype]"placeholder="paymenttype"id="paymenttype" value="<%=trip.paymenttype%>">
+     </div>
+     
+     <div>
+        <label for="reason"class="form-label">reason:</label>
+        <input type="text"class="form-control" name="trip[reason]"placeholder="reason"id="reason" value="<%=trip.reason%>">
+     </div>
+     <div>
+        <label for="amount"class="form-label">amount:</label>
+        <input type="Number"class="form-control" name="trip[amount]"placeholder="amount"id="amount" value=<%=trip.amount%>>
+     </div>
+     <div>
+        <label for="vchtype"class="form-label">vchtype:</label>
+        <input type="text"class="form-control" name="trip[vchtype]"placeholder="vchtype"id="vchtype" value="<%=trip.vchtype%>">
+     </div>
+     <div>
+        <label for="vchno"class="form-label">vch number:</label>
+        <input type="Number"class="form-control" name="trip[vchno]"placeholder="vchno"id="vchno" value=<%=trip.vchno%>>
+     </div>
+     <div>
+        <label for="debit"class="form-label">debit:</label>
+        <input type="Number"class="form-control" name="trip[debit]"placeholder="debit"id="debit" value=<%=trip.debit%> >
+     </div>
+     <div>
+        <label for="credit"class="form-label">credit:</label>
+        <input type="Number"class="form-control" name="trip[credit]"placeholder="credit"id="credit" value=<%=trip.credit%>>
+     </div>
+     
+        <button class="btn btn-success">UPDATE</button>
+     </div>
+ </div>
+</form>

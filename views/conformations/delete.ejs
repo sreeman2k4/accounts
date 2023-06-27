@@ -1,0 +1,10 @@
+<%layout("./layouts/boilerplate")%>
+<p>are u sure do u want to delete</p>
+<p><%=worker.name%></p>
+<p><%=worker.totdebit%></p>
+<p><%=worker.totcredit%></p>
+<p><%=worker.balance%></p>
+
+<form action="/workers/<%=worker._id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger btn-sm">delete</button>
+  </form>

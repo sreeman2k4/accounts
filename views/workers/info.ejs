@@ -1,0 +1,93 @@
+<%layout("./layouts/boilerplate")%>
+
+<h1><%=worker.name%></h1>
+
+<div class="table" style="border:2px solid rgb(21, 2, 2)">
+    <div class="container" >
+        <div class="row">
+            <div class="col">
+                <b>date</b>
+            </div>
+            <div class="col">
+                <b>vehicle</b>
+            </div>
+            <div class="col">
+                <b>reason</b>
+            </div>
+            <div class="col">
+                <b>paymenttype</b>
+            </div>
+            <div class="col">
+                <b>amount</b>
+            </div>
+            <div class="col">
+                <b>vchtype</b>
+            </div>
+            <div class="col">
+                <b>vchno</b>
+            </div>
+            <div class="col">
+                <b>debit</b>
+            </div>
+            <div class="col">
+                <b>credit</b>
+            </div>
+            <div class="col">
+                <b>edit</b>
+            </div>
+            <div class="col">
+                <b>delete</b>
+            </div>
+        </div>
+    </div>
+    
+    <%for(let trip of worker.trips){%>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p><%=trip.date%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.vehicle%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.reason%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.paymenttype%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.amount%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.vchtype%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.vchno%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.debit%></p>
+                </div>
+                <div class="col">
+                    <p><%=trip.credit%></p>
+                </div>
+                <div class="col">
+                    <a href="/workers/<%=worker._id%>/<%=trip._id%>">edit</a>
+                </div>
+                <div class="col">
+                    <a>delete</a>
+                </div>
+            </div>
+        </div>
+        <%}%>
+</div>
+
+<h4><b>debit amount=</b><%=worker.totdebit%></h4>
+<h4><b>credit amount=</b><%=worker.totcredit%></h4>
+<h4><b>remaing balance(debit-credit)=<%=worker.balance%></b></h4>
+
+
+<a href="/workers/<%=worker._id%>/addtrip">add trip</a>
+<a href="/workers/<%=worker._id%>/delete">delete</a>
+
+
