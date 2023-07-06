@@ -31,7 +31,7 @@ app.use(methodOverride("_method"));
 app.use(session(sessionconfiguration));
 app.use(express.static(path.join(__dirname,"public")))
 
-mongoose.connect('mongodb://localhost:27017/dadaccounts',{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect('mongodb+srv://sreeman:saiveer2k4@cluster0.mjzapfc.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology:true})
 
  .then(()=>{
     console.log("mongo connection open");
